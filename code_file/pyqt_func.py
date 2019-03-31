@@ -5,13 +5,9 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import (QApplication, QFileDialog, QGridLayout,QLineEdit,
                              QLabel, QPushButton,QWidget)
 
-gender = "male"
-age = "20"
-beauty = "50.0"
-people = "harry"
 
 class face_gui(QWidget):
-    global gender,age,beauty,people
+  
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -23,6 +19,7 @@ class face_gui(QWidget):
         self.signbtn = QPushButton('sign', self)
         self.quitbtn = QPushButton('quit', self)
         self.label = QLabel()
+        
         self.gender_ = QLabel("gender:",self)
         self.age_ = QLabel("age:",self)
         self.beauty_ = QLabel("beauty",self)
@@ -32,7 +29,7 @@ class face_gui(QWidget):
         # 布局设定
         layout = QGridLayout(self)
         layout.addWidget(self.label, 0, 1, 1, 1)
-        layout.addWidget(self.signing_,3,1,1,1)
+        layout.addWidget(self.signing_,3,1,1,1)   #3,1,1,1表示第3行第一列
         layout.addWidget(self.gender_,4,1,1,1)
         layout.addWidget(self.age_,5,1,1,1,)
         layout.addWidget(self.beauty_,6,1,1,1)
@@ -50,7 +47,7 @@ class face_gui(QWidget):
         layout.addWidget(self.signingedit,3,2,1,1)
 
 
-
+        #添加背景图片
         pixmap = QPixmap('group.jpg')
         self.label.setPixmap(pixmap)
 
