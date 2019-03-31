@@ -67,7 +67,6 @@ class face_gui(QWidget):
         if fileName is '':
             return
         #获取api返回信息
-        global gender, age, beauty
         face_info = img_detect(fileName)
         gender = face_info[0]['type']
         age =str( face_info[1])
@@ -81,7 +80,6 @@ class face_gui(QWidget):
 
     def signSlot(self):
         # 调用存储文件dialog
-        global people
         filename, tmp = QFileDialog.getOpenFileName(
             self, 'Open Image', './__data', '*.png *.jpg *.bmp')
 
